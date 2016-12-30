@@ -1,0 +1,17 @@
+{
+  "name": "blueprint-explorer",
+  "version": "1.0.0",
+  "description": "todo...",
+  "main": "main.js",
+
+  "repository": "todo...",
+  "license": "MIT",
+
+  "scripts": {
+    "start": "electron ."
+  },
+
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}
