@@ -12,6 +12,7 @@
   },
 
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^1.4.1",
+    "vue": "^2.1.6"
   }
 }
