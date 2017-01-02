@@ -8,34 +8,9 @@
 </head>
 <body>
 
-  <h1>Blueprint Explorer</h1>
+  <div id='app'></div>
 
-  <div id="app">
-    <ul>
-      <namespace :model='root'></namespace>
-    </ul>
-  </div>
-
-  <template id='namespace'>
-    <li>
-      <div>
-        <span>{{ model.name }}</span>
-      <div>
-      <ul v-if='hasChildren'>
-        <component v-for='child in model.children' :is='child.type' :model='child'></component>
-      </ul>
-    </li>
-  </template>
-
-  <template id='type'>
-    <li>
-      <div>
-        <span>{{ model.name }}</span>
-      </div>
-    </li>
-  </template>
-
-  <script src='./app.js'></script>
+  <script src='./dist/build.js'></script>
 
 </body>
 </html>
