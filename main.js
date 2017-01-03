@@ -9,8 +9,7 @@ const url = require('url');
 
 let mainWindow;
 
-function createWindow()
-{
+function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600
@@ -33,15 +32,13 @@ function createWindow()
 app.on('ready', createWindow);
 
 app.on('window-all-closed', function(){
-  if (process.platform !== 'darwin')
-  {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
 app.on('activate', function(){
-  if (mainWindow === null)
-  {
+  if (mainWindow === null) {
     createWindow();
   }
 });
