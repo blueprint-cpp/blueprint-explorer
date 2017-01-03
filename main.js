@@ -25,6 +25,10 @@ function createWindow() {
     mainWindow = null;
   });
 
+  if (process.env.NODE_ENV !== 'production') {
+    require('vue-devtools').install()
+  }
+
   mainWindow.webContents.openDevTools();
   mainWindow.maximize();
 }

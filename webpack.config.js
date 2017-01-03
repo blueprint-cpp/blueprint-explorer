@@ -27,5 +27,5 @@ module.exports = {
     "presets": ["es2015"]
   },
 
-  target: 'node'
+  target: 'electron'
 };
