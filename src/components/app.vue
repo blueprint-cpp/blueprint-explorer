@@ -7,6 +7,7 @@
 
 <script>
   const ipcRenderer = require('electron').ipcRenderer;
+  const config = require('../../config.js');
 
   import BlueprintList from './blueprint-list.vue'
 
@@ -24,6 +25,14 @@
       ipcRenderer.on('open-blueprint', function(event, data) {
         blueprints.push(data);
       });
+
+      var openedBlueprints = config.getBlueprints();
+
+      if (openedBlueprints) {
+        for (var i = 0; i < openedBlueprints.length; i++) {
+          blueprints.push({ file: openedBlueprints[i] });
+        }
+      }
     },
 
     components: {

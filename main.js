@@ -1,11 +1,9 @@
 'use strict';
 
 const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const { app, BrowserWindow } = electron;
 
 const menu = require('./menu.js');
-
 const path = require('path');
 const url = require('url');
 
@@ -16,8 +14,6 @@ function createWindow() {
     width: 800,
     height: 600
   });
-
-  menu.install();
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -35,6 +31,8 @@ function createWindow() {
   }
 
   mainWindow.maximize();
+
+  menu.install();
 }
 
 app.on('ready', createWindow);
