@@ -4,6 +4,8 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
+const menu = require('./menu.js');
+
 const path = require('path');
 const url = require('url');
 
@@ -14,6 +16,8 @@ function createWindow() {
     width: 800,
     height: 600
   });
+
+  menu.install();
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -26,10 +30,10 @@ function createWindow() {
   });
 
   if (process.env.NODE_ENV !== 'production') {
-    require('vue-devtools').install()
+    mainWindow.webContents.openDevTools();
+    require('vue-devtools').install();
   }
 
-  mainWindow.webContents.openDevTools();
   mainWindow.maximize();
 }
 

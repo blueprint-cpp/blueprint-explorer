@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p @click='toggle'>{{ model.name }}</p>
+    <p @click='toggle'>{{ model.file }}</p>
     <ul v-show='expanded'>
       <component v-for='child in children' :is='child.type' :model='child'></component>
     </ul>

@@ -6,6 +6,8 @@
 </template>
 
 <script>
+  const ipcRenderer = require('electron').ipcRenderer;
+
   import BlueprintList from './blueprint-list.vue'
 
   export default {
@@ -17,7 +19,11 @@
     },
 
     created () {
-      //this.blueprints.push({ name: 'blueprint.db', file: 'assets/blueprint.db' });
+      var blueprints = this.blueprints;
+
+      ipcRenderer.on('open-blueprint', function(event, data) {
+        blueprints.push(data);
+      });
     },
 
     components: {
