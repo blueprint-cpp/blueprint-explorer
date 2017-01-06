@@ -12,7 +12,7 @@ fs.readdirSync('node_modules')
   });
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './app/main.js',
 
   output: {
     path: path.resolve(__dirname, './dist'),
