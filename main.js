@@ -27,7 +27,6 @@ function createWindow() {
 
   if (process.env.NODE_ENV !== 'production') {
     mainWindow.webContents.openDevTools();
-    require('vue-devtools').install();
   }
 
   mainWindow.maximize();
