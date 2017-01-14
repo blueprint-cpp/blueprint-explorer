@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-angular',
+  selector: 'app',
   template: `<h1>Hello {{name}}</h1>`
 })
-
-export class AppComponent { name = 'Blueprint Explorer'; }
+export class AppComponent {}
